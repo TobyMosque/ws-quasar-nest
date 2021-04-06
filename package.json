@@ -1,0 +1,15 @@
+{
+    "private": true,
+    "workspaces": {
+      "packages": ["backend", "frontend"]
+    },
+    "scripts": {
+      "backend:dev": "yarn workspace backend build:dev",
+      "backend:build": "yarn workspace backend build",
+      "backend:start": "yarn workspace backend start",
+      "frontend:dev": "yarn workspace frontend dev",
+      "start": "yarn backend:start",
+      "dev": "concurrently \"yarn backend:dev\" \"yarn frontend:dev\"",
+      "postinstall": "yarn backend:build"
+    }
+  }
