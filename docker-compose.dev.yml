@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  database:
+    volumes:
+      - database:/var/lib/postgresql/database
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: keepitsupersecret
+      POSTGRES_DB: postgres
+
+volumes:
+  database:

@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  database:
+    image: postgres:latest
+    ports:
+      - "43532:5432"
+    restart: always
+    networks:
+      network.external:
+      network.internal:
+        ipv4_address: "172.19.19.9"
+
+networks:
+  network.external:
+  network.internal:
+    internal: true
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.19.0/24

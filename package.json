@@ -4,6 +4,7 @@
       "packages": ["backend", "frontend"]
     },
     "scripts": {
+      "docker:dev": "sudo docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
       "backend:dev": "yarn workspace backend build:dev",
       "backend:build": "yarn workspace backend build",
       "backend:start": "yarn workspace backend start",
